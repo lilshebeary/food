@@ -5,11 +5,13 @@ import { View, Image, Text, StyleSheet } from 'react-native';
     return (
         <View style={styles.container}>
             <Image 
+            // keeps showing an error here when I press a single result ResultsShowScreen
+            // navigation not working here
                 source={{ uri: result.image_url }} 
                 style={styles.imageStyle}
             />
             <Text style={styles.nameStyle}>{result.name}</Text>
-            <Text style={styles.ratingStyle}> {result.rating} Stars, {result.review_count} Reviews </Text>
+            <Text> {result.rating} Stars, {result.review_count} Reviews </Text>
         </View>
     )
 }
@@ -27,10 +29,7 @@ const styles = StyleSheet.creat=({
    },
    nameStyle: {
        fontWeight: 'bold',
-   }, 
-//    ratingStyle: {
-//        fontSize: 12
-//    } 
+   } 
 });
 
 export default ResultsDetail;

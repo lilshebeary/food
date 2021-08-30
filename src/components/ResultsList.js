@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableHighlightBase } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import ResultsDetail from './ResultsDetail';
 
- const ResultsList = ({ title, results }) => {
+ const ResultsList = ({ title, results, navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.titleStyle}>{title}</Text>
@@ -12,7 +12,12 @@ import ResultsDetail from './ResultsDetail';
                 data={results}
                 keyExtractor={result => result.id}
                 renderItem={({ item }) => {
-                    return <ResultsDetail result={item} />;
+                    return (
+                        // navigation not working on press to ResultsShow 
+                        <TouchableOpacity onPress={() => navigation.navigate('ResultsShow')}>
+                            <ResultsDetail result={item} />
+                        </TouchableOpacity>
+                    );
                 }}
             />
         </View>
