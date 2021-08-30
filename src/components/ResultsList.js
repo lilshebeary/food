@@ -8,6 +8,7 @@ import ResultsDetail from './ResultsDetail';
             <Text style={styles.titleStyle}>{title}</Text>
             <FlatList 
                 horizontal
+                showsHorizontalScrollIndicator={false}
                 data={results}
                 keyExtractor={result => result.id}
                 renderItem={({ item }) => {
