@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
- const ResultsShowScreen = ({ result }) => {
+ const ResultsShowScreen = () => {
     return (
         <View style={styles.container}>
             
-            <Text> {result.name} </Text>
+            <Text> Results show </Text>
         </View>
     )
 }

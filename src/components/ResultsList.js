@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import ResultsDetail from './ResultsDetail';
 
  const ResultsList = ({ title, results, navigation }) => {
@@ -21,10 +22,10 @@ import ResultsDetail from './ResultsDetail';
                 }}
             />
         </View>
-    )
-}
+    );
+};
 
-const styles = StyleSheet.creat=({
+const styles = StyleSheet.create({
     titleStyle: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -36,4 +37,4 @@ const styles = StyleSheet.creat=({
     }
 });
 
-export default ResultsList;
+export default withNavigation(ResultsList);
