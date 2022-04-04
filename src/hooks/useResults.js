@@ -16,7 +16,9 @@ export default () => {
             });
             setResults(response.data.businesses);
         } catch (err) {
+            console.log(err);
             setErrorMessage('Something went wrong');
+            
         }
     };
     useEffect(() => {
@@ -24,4 +26,5 @@ export default () => {
     }, []);
 
     return [searchApi, results, errorMessage];
+    
 };
